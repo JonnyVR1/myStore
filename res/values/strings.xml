@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">myStore</string>
+    <string name="about">About</string>
+    <string name="news">News</string>
+    <string name="skins">Skins</string>
+    <string name="mods">MODs</string>
+    <string name="kernels">Kernels</string>
+    <string name="xda">Thread</string>
+    <string name="refresh">Refresh</string>
+    <string name="connect_internet">Please connect internet</string>
+    <string name="loading">Loading..please wait</string>
+    <string name="image">Image</string>
+    <string name="mikrosmile">mikrosmile</string>
+    <string name="mikrosmile_info">DarkSense ROM Owner and Developer \nDarkSense Store Creator\nOriginal MyStore Creator</string>
+    <string name="rom_author">Your name</string>
+    <string name="rom_author_summary">ROM Name</string>
+    <string name="install">Do you want to download now?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="downloading">Downloading file.. please wait</string>
+    <string name="download_finish">Download finish</string>
+    <string name="exctracting">Extracting file.. please wait</string>
+    <string name="install_kernel">To install Kernel go to Recovery/MyStore/Kernels/ choose kernel to install</string>
+    <string name="open_manager_skin">Do you want to install file now?</string>
+    <string name="downloaded">Downloads</string>
+    <string name="install_mod">To install Mod go to Recovery/MyStore/MODs/ choose mod to install</string>
+    <string name="network">Network Required</string>
+    <string name="network_msg">MyStore requires network connection. It seems you are not connected. Do you want to open Wi-Fi Settings?</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="internet_connected">Internet is connected</string>
+    <string name="exit">Exit</string>
+    <string name="install_battery">To install Battery MOD go to Recovery/MyStore/Battery/ choose MOD to install</string>
+    <string name="battery">Battery</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="install_kb">To install Keyboard MOD go to Recovery/MyStore/Keyboard/ choose mod to install</string>
+    <string name="jonny">Jonny</string>
+    <string name="jonny_info">DarkSense ROM Owner and Developer\n</string>
+</resources>

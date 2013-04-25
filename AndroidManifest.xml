@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.mikrosmile.my.store"
+    android:versionCode="20"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+ 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.REBOOT"/>
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+
+    <application
+        android:allowBackup="true"
+        allowSkinChange="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="org.mikrosmile.my.store.MainActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AboutDetails"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="AboutDetails" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.AboutDetails" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".News"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="News" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.News" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NewsListViewAdapter"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="NewsListViewAdapter" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.NewsListViewAdapter" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SAXXMLHandler"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="SAXXMLHandler" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.SAXXMLHandler" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SAXXMLParser"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="SAXXMLParser" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.SAXXMLParser" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileChooser"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="FileChooser" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.FileChooser" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Settings"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="Settings" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.Settings" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileChooserBattery"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="FileChooserBattery" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.FileChooserBattery" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileChooserKeyboard"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="FileChooserKeyboard" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.FileChooserKeyboard" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileChooserMods"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="FileChooserMods" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.FileChooserMods" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FileChooserKernels"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:label="FileChooserKernels" >
+            <intent-filter>
+            <action android:name="org.mikrosmile.my.store.FileChooserKernels" />
+            <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.mikrosmile.my.store.RunAsRoot"/>
+        <provider
+            android:name="org.mikrosmile.my.store.TabProvider"
+            android:authorities="org.mikrosmile.my.store.MainActivity" />
+    </application>
+
+</manifest>

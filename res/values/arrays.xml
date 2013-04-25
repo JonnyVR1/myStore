@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_dialog_items">
+        <item>Open XDA Profile</item>
+        <item>Donate via PayPal</item>
+        <item>Follow on Twitter</item>
+    </string-array>
+    <string-array name="mikrosmile">
+        <item>Open XDA Profile</item>
+        <item>Donate via PayPal</item>
+        <item>Follow on Twitter</item>
+        <item>Open myStore Thread</item>
+        <item>Open DarkSense ROM Thread</item>
+    </string-array>
+</resources>

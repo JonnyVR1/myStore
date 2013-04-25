@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory 
+        android:title="Automatic Loading"
+        android:key="auto_load">
+        
+        <CheckBoxPreference
+            android:title="Loading of News"
+            android:summary="Automatic loading of News on start"
+            android:key="load_news"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+            <CheckBoxPreference
+            android:title="Loading of Skins"
+            android:summary="Automatic loading of Skins list on start"
+            android:key="load_skins"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+            <CheckBoxPreference
+            android:title="Loading of Battery"
+            android:summary="Automatic loading of Battery MODs list on start"
+            android:key="load_battery"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+            <CheckBoxPreference
+            android:title="Loading of MODs"
+            android:summary="Automatic loading of MODs list on start"
+            android:key="load_mods"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+            <CheckBoxPreference
+            android:title="Loading of Keyboard"
+            android:summary="Automatic loading of Keyboard MODs list on start"
+            android:key="load_kb"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+            <CheckBoxPreference
+            android:title="Loading of Kernels"
+            android:summary="Automatic loading of Kernels list on start"
+            android:key="load_kernels"
+            android:defaultValue="true">
+            </CheckBoxPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
