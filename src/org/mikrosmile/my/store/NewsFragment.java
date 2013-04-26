@@ -51,15 +51,17 @@ OnClickListener, OnItemClickListener {
     ListView listView;
     List<News> newsview;
     NewsListViewAdapter listViewAdapter;
-    static final String URL = "http://mikrosense.com/MyStore/news/news.xml";
+    String URL = "";
     
     public NewsFragment() {      
     }
     
-    @Override  
+    @SuppressWarnings("static-access")
+	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
                              Bundle savedInstanceState) { 
     	View view =  inflater.inflate(R.layout.news_activity, container, false);
+    	URL = cd.getUrls("ro.news");
     	button = (Button) view.findViewById(R.id.button);
         listView = (ListView) view.findViewById(R.id.newsList);
         button.setOnClickListener(this);
@@ -70,7 +72,7 @@ OnClickListener, OnItemClickListener {
             SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
             boolean news_on_start = getPrefs.getBoolean("load_news", true);
             if(news_on_start == true)
-            task.execute(new String[] { URL });	
+            task.execute(URL);	
         	
         }else{
         	Toast.makeText(getActivity(), R.string.connect_internet, Toast.LENGTH_LONG).show();
@@ -93,7 +95,7 @@ OnClickListener, OnItemClickListener {
         vibrator.vibrate(50);  
         if (isInternetPresent) {
         GetXMLTask task = new GetXMLTask(getActivity());
-        task.execute(new String[] { URL });
+        task.execute(URL);
        
     }else{
     	Toast.makeText(getActivity(), R.string.connect_internet, Toast.LENGTH_LONG).show();

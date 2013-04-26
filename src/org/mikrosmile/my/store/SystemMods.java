@@ -63,16 +63,17 @@ OnClickListener, OnItemClickListener {
     ListView listView;
     List<News> newsview;
     SystemModsListView listViewAdapter;
- 
-    static final String URL = "http://mikrosense.com/MyStore/skins/skins.xml";
+    String URL = "";
     
     public SystemMods() {      
     }
 
-    @Override  
+    @SuppressWarnings("static-access")
+	@Override  
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
                              Bundle savedInstanceState) { 
 		View view =  inflater.inflate(R.layout.mods_activity, container, false);
+		URL = cd.getUrls("ro.mods");
 		button = (Button) view.findViewById(R.id.button);
         listView = (ListView) view.findViewById(R.id.modsList);
         button.setOnClickListener(this);
@@ -83,7 +84,7 @@ OnClickListener, OnItemClickListener {
             SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
             boolean mods_on_start = getPrefs.getBoolean("load_mods", true);
             if(mods_on_start == true)
-            task.execute(new String[] { URL });	
+            task.execute(URL);	
         	
         }else{
         	Toast.makeText(getActivity(), R.string.connect_internet, Toast.LENGTH_LONG).show();
@@ -139,7 +140,7 @@ OnClickListener, OnItemClickListener {
         vibrator.vibrate(50);  
         if (isInternetPresent) {
         GetXMLTask task = new GetXMLTask(getActivity());
-        task.execute(new String[] { URL });
+        task.execute(URL);
     }else{
     	Toast.makeText(getActivity(), R.string.connect_internet, Toast.LENGTH_LONG).show();
 
