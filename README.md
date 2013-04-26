@@ -6,7 +6,7 @@ Now myStore will get links for secions from single file in System ROOT folder.
 
 Create myStore.txt (follow exact name) and place it to /system/ (where you have build.prop file) and paste this data:
 
-<code>ro.news=http://yoursite.com/news/news.xml
+ro.news=http://yoursite.com/news/news.xml
 
 ro.skins=http://yoursite.com/skins/skins.xml
 
@@ -16,7 +16,7 @@ ro.kb=http://yoursite.com/keyboard/keyboard.xml
 
 ro.mods=http://yoursite.com/skins/skins.xml
 
-ro.kernels=http://yoursite.com/kernels/kernels.xml</code>
+ro.kernels=http://yoursite.com/kernels/kernels.xml
 
 
 Change to your real links and you finish with configuration. 
