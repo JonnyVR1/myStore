@@ -1,5 +1,6 @@
 package org.mikrosmile.my.store;
 
+import java.io.File;
 import java.io.IOException;
 
 import android.app.Activity;
@@ -102,6 +103,22 @@ public class MainActivity extends Activity {
 		}
 		
         super.onCreate(savedInstanceState);
+        File file = new File("/system/myStore.txt");
+        if(!file.exists()){
+        	HtcAlertDialog.Builder aDialog = new HtcAlertDialog.Builder(MainActivity.this);
+         	aDialog.setCancelable(false);
+         	aDialog.setTitle(R.string.error);
+         	aDialog.setIcon(R.drawable.ic_alert);
+         	aDialog.setMessage(R.string.error_msg);
+         	 aDialog.setPositiveButton(R.string.exit, new DialogInterface.OnClickListener() {
+         	    public void onClick(DialogInterface dialog,int which) {
+         	    	finish();
+                	
+         	    }
+         	  });
+             
+              aDialog.show();
+        }
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         SetupActionBar();
         final int rootId = 1;
