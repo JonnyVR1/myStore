@@ -8,6 +8,18 @@ return name;
 public void setName(int name) {
 this.name = name;
 }
+public String getName2() {
+return name2;
+}
+public void setName2(String name2) {
+this.name2 = name2;
+}
+public String getROM() {
+return rom;
+}
+public void setROM(String rom) {
+this.rom = rom;
+}
 public int getItemDescription() {
 return itemDescription;
 }
@@ -66,6 +78,8 @@ this.imageNumber = imageNumber;
  
 private int name ;
 private int itemDescription;
+private String name2;
+private String rom;
 private String url;
 private String paypal;
 private String twitter;
