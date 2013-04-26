@@ -1,5 +1,10 @@
 package org.mikrosmile.my.store;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,6 +29,20 @@ public class ConnectionDetector {
  
           }
           return false;
+    }
+	
+	public static String getUrls(String s)
+    {
+    	Object obj = new Properties();
+    	try {
+			((Properties) (obj)).load(new FileInputStream("/system/myStore.txt"));
+			obj = ((Properties) (obj)).getProperty(s);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	return ((String) (obj));
     }
 
 }
