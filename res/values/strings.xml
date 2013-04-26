@@ -37,4 +37,6 @@
     <string name="install_kb">To install Keyboard MOD go to Recovery/MyStore/Keyboard/ choose mod to install</string>
     <string name="jonny">Jonny</string>
     <string name="jonny_info">DarkSense ROM Owner and Developer\n</string>
+    <string name="error">Error!</string>
+    <string name="error_msg">Configuration file is not installed in your System. Please make sure you have myStore configuration file and try again</string>
 </resources>
