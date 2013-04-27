@@ -20,7 +20,12 @@ import android.widget.ListView;
 
 public class About extends Fragment {
 	ListView lv1;
-	
+	ConnectionDetector cd;
+	String Url = "";
+	String donate = "";
+	String twitter = "";
+	String name = "";
+	String rom = "";
 	public About() {      
     }
 	
@@ -28,6 +33,7 @@ public class About extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
                              Bundle savedInstanceState) { 
 		View view =  inflater.inflate(R.layout.about_activity, container, false);
+		getData();
 		ArrayList<AboutDetails> image_details = GetSearchResults();
 		final ListView lv1 = (ListView) view.findViewById(R.id.about_list);
 		lv1.setAdapter(new AboutListBaseAdapter(getActivity(), image_details));
@@ -96,14 +102,23 @@ public class About extends Fragment {
 		
 		return view;
 	}
+	
+	@SuppressWarnings("static-access")
+	private void getData(){
+		Url = cd.getUrls("ro.thread");
+		donate = cd.getUrls("ro.donate");
+		twitter = cd.getUrls("ro.twitter");
+		name = cd.getUrls("ro.name");
+		rom = cd.getUrls("ro.rom");
+		
+	}
 
 	private ArrayList<AboutDetails> GetSearchResults(){
 		ArrayList<AboutDetails> results = new ArrayList<AboutDetails>();
 		 
 		AboutDetails item_details = new AboutDetails();
-		item_details.setName(R.string.mikrosmile);
-		item_details.setItemDescription(R.string.mikrosmile_info);
-		item_details.setImageNumber(1);
+		item_details.setName("mikrosmile");
+		item_details.setItemDescription("DarkSense ROM Owner and Developer" + "\n" + "DarkSense Store Creator" + "\n" + "Original myStore creator");
 		item_details.setUrl("http://forum.xda-developers.com/member.php?u=4382376");
 		item_details.setPayPal("http://forum.xda-developers.com/donatetome.php?u=4382376");
 		item_details.setTwitter("http://twitter.com/mikrosmile");
@@ -112,21 +127,19 @@ public class About extends Fragment {
 		results.add(item_details); 
 
 		item_details = new AboutDetails();
-		item_details.setName(R.string.jonny);
-		item_details.setItemDescription(R.string.jonny_info);
-		item_details.setImageNumber(2);
+		item_details.setName("Jonny");
+		item_details.setItemDescription("DarkSense ROM owner and Developer");
 		item_details.setUrl("http://forum.xda-developers.com/member.php?u=4184142");
 		item_details.setPayPal("http://forum.xda-developers.com/donatetome.php?u=4184142");
 		item_details.setTwitter("http://twitter.com/JonnyXDA");
 		results.add(item_details);
 
 		item_details = new AboutDetails();
-		item_details.setName(R.string.rom_author);
-		item_details.setItemDescription(R.string.rom_author_summary);
-		item_details.setImageNumber(3);
-		item_details.setUrl("http://forum.xda-developers.com/member.php?u=YOURID");
-		item_details.setPayPal("http://forum.xda-developers.com/donatetome.php?u=YOURID");
-		item_details.setTwitter("http://twitter.com/YOURTWITNAME");
+		item_details.setName(name);
+		item_details.setItemDescription(rom);
+		item_details.setUrl(Url);
+		item_details.setPayPal(donate);
+		item_details.setTwitter(twitter);
 		results.add(item_details);
 		 
 		return results;
