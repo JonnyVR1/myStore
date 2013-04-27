@@ -34,6 +34,13 @@ public class MainActivity extends Activity {
     Boolean isInternetPresent = false;
     String versionName = null;
 	
+	protected void onPause() {
+      super.onPause();
+    }
+
+    protected void onResume() {
+      super.onResume();
+    }
 	
 	@Override
     public void onCreateContextMenu (ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -43,15 +50,18 @@ public class MainActivity extends Activity {
 	
 	@Override
     public boolean onCreateOptionsMenu (Menu menu) {
-        menu.add(1, 1, 1, "Settings");
+		menu.add(1, 1, 1, R.string.edit_tabs);
+        menu.add(1, 2, 2, R.string.settings);
         return true;
     }
 	public boolean onOptionsItemSelected(MenuItem menuitem)
     {
     	boolean flag = true;
-        switch (menuitem.getItemId())
-        {
-        case 1:
+        switch (menuitem.getItemId()) {
+		case 1:
+        	mCarousel.enterCarouselEditMode();
+        	break;
+        case 2:
         	startActivity(new Intent(this, Settings.class));
         	break;
         }
@@ -92,13 +102,11 @@ public class MainActivity extends Activity {
 			@SuppressWarnings("unused")
 			Process p = Runtime.getRuntime().exec("su");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		try {
 			versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -129,6 +137,7 @@ public class MainActivity extends Activity {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(rootId, mCarousel);
         ft.commit();
+		mCarousel.setHasOptionsMenu(true);
         registerForContextMenu(viewRoot);
         cd = new ConnectionDetector(getApplicationContext());
         isInternetPresent = cd.isConnectingToInternet();

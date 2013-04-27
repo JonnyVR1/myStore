@@ -11,7 +11,6 @@ public class Carousel extends CarouselFragment {
 	public Carousel() {
 		super(MainActivity.AUTHORITY);
 		requestCarouselFeature(CarouselFragment.FEATURE_CUSTOM_TITLE);
-		// TODO Auto-generated constructor stub
 	}
 	
 	private void addTab1(CarouselHost host, String tag, int icon, int str) {
@@ -66,9 +65,8 @@ public class Carousel extends CarouselFragment {
                 R.string.mods);
         addTab7(host, "Tab7", R.drawable.ic_kernels,
                 R.string.kernels);
-        
-        
-
-    }
-
+	}
+	public void enterCarouselEditMode() {
+		enterEditMode();
+	}
 }
