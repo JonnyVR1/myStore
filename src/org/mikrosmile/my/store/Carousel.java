@@ -65,8 +65,9 @@ public class Carousel extends CarouselFragment {
                 R.string.mods);
         addTab7(host, "Tab7", R.drawable.ic_kernels,
                 R.string.kernels);
-	}
+    }
 	public void enterCarouselEditMode() {
-		enterEditMode();
-	}
+		    enterEditMode();
+		  }
+
 }
