@@ -2,24 +2,16 @@ package org.mikrosmile.my.store;
 
 import java.util.ArrayList;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
  
 public class AboutListBaseAdapter extends BaseAdapter {
  private static ArrayList<AboutDetails> aboutDetailsrrayList;
-  
- private Integer[] imgid = {
-   R.drawable.mikrosmile,
-   R.drawable.jonny,
-   R.drawable.rom_author,
-   };
-  
+    
  private LayoutInflater l_Inflater;
  
  public AboutListBaseAdapter(Context context, ArrayList<AboutDetails> results) {
@@ -46,7 +38,6 @@ public class AboutListBaseAdapter extends BaseAdapter {
    holder = new ViewHolder();
    holder.txt_itemName = (TextView) convertView.findViewById(R.id.name);
    holder.txt_itemDescription = (TextView) convertView.findViewById(R.id.itemDescription);
-   holder.itemImage = (ImageView) convertView.findViewById(R.id.photo);
  
    convertView.setTag(holder);
   } else {
@@ -55,7 +46,6 @@ public class AboutListBaseAdapter extends BaseAdapter {
    
   holder.txt_itemName.setText(aboutDetailsrrayList.get(position).getName());
   holder.txt_itemDescription.setText(aboutDetailsrrayList.get(position).getItemDescription());
-  holder.itemImage.setImageResource(imgid[aboutDetailsrrayList.get(position).getImageNumber() - 1]);
  
   return convertView;
  }
@@ -63,7 +53,6 @@ public class AboutListBaseAdapter extends BaseAdapter {
  static class ViewHolder {
   TextView txt_itemName;
   TextView txt_itemDescription;
-  ImageView itemImage;
  }
 }
 
