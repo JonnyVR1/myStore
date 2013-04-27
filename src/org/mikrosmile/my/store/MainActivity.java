@@ -33,14 +33,16 @@ public class MainActivity extends Activity {
     ConnectionDetector cd;
     Boolean isInternetPresent = false;
     String versionName = null;
-	
-	protected void onPause() {
-      super.onPause();
-    }
+    String threadURL = "";
+    
+    protected void onPause() {
+        super.onPause();
+      }
 
-    protected void onResume() {
-      super.onResume();
-    }
+      protected void onResume() {
+        super.onResume();
+      }
+	
 	
 	@Override
     public void onCreateContextMenu (ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -57,8 +59,9 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem menuitem)
     {
     	boolean flag = true;
-        switch (menuitem.getItemId()) {
-		case 1:
+        switch (menuitem.getItemId())
+        {
+        case 1:
         	mCarousel.enterCarouselEditMode();
         	break;
         case 2:
@@ -89,7 +92,7 @@ public class MainActivity extends Activity {
            public void onClick(View view)
            {
         	   
-                 startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://forum.xda-developers.com/showthread.php?t=2230067")));
+                 startActivity(new Intent("android.intent.action.VIEW", Uri.parse(threadURL)));
 
         	   
            }
@@ -97,6 +100,7 @@ public class MainActivity extends Activity {
    );
     }
 	
+	@SuppressWarnings("static-access")
 	public void onCreate(Bundle savedInstanceState) {
 		try {
 			@SuppressWarnings("unused")
@@ -128,6 +132,7 @@ public class MainActivity extends Activity {
               aDialog.show();
         }
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+        threadURL = cd.getUrls("ro.thread");
         SetupActionBar();
         final int rootId = 1;
         FrameLayout viewRoot = new FrameLayout(this);
@@ -137,7 +142,7 @@ public class MainActivity extends Activity {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(rootId, mCarousel);
         ft.commit();
-		mCarousel.setHasOptionsMenu(true);
+        mCarousel.setHasOptionsMenu(true);
         registerForContextMenu(viewRoot);
         cd = new ConnectionDetector(getApplicationContext());
         isInternetPresent = cd.isConnectingToInternet();
