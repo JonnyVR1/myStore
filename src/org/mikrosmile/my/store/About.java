@@ -105,7 +105,7 @@ public class About extends Fragment {
 	
 	@SuppressWarnings("static-access")
 	private void getData(){
-		Url = cd.getUrls("ro.thread");
+		Url = cd.getUrls("ro.profile");
 		donate = cd.getUrls("ro.donate");
 		twitter = cd.getUrls("ro.twitter");
 		name = cd.getUrls("ro.name");
