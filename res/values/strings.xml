@@ -12,10 +12,6 @@
     <string name="connect_internet">Please connect internet</string>
     <string name="loading">Loading..please wait</string>
     <string name="image">Image</string>
-    <string name="mikrosmile">mikrosmile</string>
-    <string name="mikrosmile_info">DarkSense ROM Owner and Developer \nDarkSense Store Creator\nOriginal MyStore Creator</string>
-    <string name="rom_author">Your name</string>
-    <string name="rom_author_summary">ROM Name</string>
     <string name="install">Do you want to download now?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -35,10 +31,8 @@
     <string name="battery">Battery</string>
     <string name="keyboard">Keyboard</string>
     <string name="install_kb">To install Keyboard MOD go to Recovery/MyStore/Keyboard/ choose mod to install</string>
-    <string name="jonny">Jonny</string>
-    <string name="jonny_info">DarkSense ROM Owner and Developer\n</string>
     <string name="error">Error!</string>
     <string name="error_msg">Configuration file is not installed in your System. Please make sure you have myStore configuration file and try again</string>
-	<string name="edit_tabs">Edit Tabs</string>
+    <string name="edit_tabs">Edit Tabs</string>
 	<string name="settings">Settings</string>
 </resources>
