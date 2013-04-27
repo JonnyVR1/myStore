@@ -2,10 +2,10 @@ package org.mikrosmile.my.store;
 
 public class AboutDetails {
 	 
-public int getName() {
+public String getName() {
 return name;
 }
-public void setName(int name) {
+public void setName(String name) {
 this.name = name;
 }
 public String getName2() {
@@ -20,10 +20,10 @@ return rom;
 public void setROM(String rom) {
 this.rom = rom;
 }
-public int getItemDescription() {
+public String getItemDescription() {
 return itemDescription;
 }
-public void setItemDescription(int itemDescription) {
+public void setItemDescription(String itemDescription) {
 this.itemDescription = itemDescription;
 }
 
@@ -76,8 +76,8 @@ public void setImageNumber(int imageNumber) {
 this.imageNumber = imageNumber;
 }
  
-private int name ;
-private int itemDescription;
+private String name ;
+private String itemDescription;
 private String name2;
 private String rom;
 private String url;
